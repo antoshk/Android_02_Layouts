@@ -17,7 +17,7 @@ class DetailsActivity : AppCompatActivity() {
     private fun initToTrailerButton(){
         val toTrailerButton: Button = findViewById(R.id.trailer_button)
         toTrailerButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:6ZfuNTqbHE8"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=6ZfuNTqbHE8"))
             startActivity(intent)
         }
     }
