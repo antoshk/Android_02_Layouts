@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">LayoutHomework</string>
     <string name="description">After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos\' actions and restore order to the universe once and for all, no matter what consequences may be in store.</string>
+    <string name="sample_movie_description">A new theme park, built on the original site of Jurassic Park, creates a genetically modified hybrid dinosaur, the Indominus Rex, which escapes containment and goes on a killing spree.</string>
+    <string name="released">Released:</string>
+    <string name="movie_trailer">MOVIE TRAILER</string>
+    <string name="overview">Overview:</string>
 </resources>

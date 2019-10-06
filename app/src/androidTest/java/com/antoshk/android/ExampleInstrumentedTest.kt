@@ -1,4 +1,4 @@
-package com.antoshk.layouthomework
+package com.antoshk.android
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

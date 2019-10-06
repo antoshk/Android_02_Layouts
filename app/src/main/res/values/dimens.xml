@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="movie_row_poster_height">100dp</dimen>
+    <dimen name="movie_row_height">108dp</dimen>
+    <dimen name="movie_row_items_margin">4dp</dimen>
+    <dimen name="movie_name_dimen">16sp</dimen>
+</resources>

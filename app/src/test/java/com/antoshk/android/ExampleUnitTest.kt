@@ -1,4 +1,4 @@
-package com.antoshk.layouthomework
+package com.antoshk.android
 
 import org.junit.Test
 
