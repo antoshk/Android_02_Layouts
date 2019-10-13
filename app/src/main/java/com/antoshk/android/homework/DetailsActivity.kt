@@ -11,19 +11,21 @@ import com.antoshk.android.R
 import com.antoshk.android.homework.repository.Movie
 import com.bumptech.glide.Glide
 
+const val MOVIE_DATA = "MovieData"
+
 class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         initTrailerButton()
-        val movie: Movie = intent.getSerializableExtra("MovieData") as Movie
+        val movie: Movie = intent.getSerializableExtra(MOVIE_DATA) as Movie
         findViewById<TextView>(R.id.movie_title).text = movie.name
         findViewById<TextView>(R.id.overview_content).text = movie.description
         val poster = findViewById<ImageView>(R.id.poster)
         Glide
             .with(this)
-            .load(movie.posterURI)
+            .load(movie.posterUri)
             .into(poster)
     }
 

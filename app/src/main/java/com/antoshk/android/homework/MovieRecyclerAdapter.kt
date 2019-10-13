@@ -49,7 +49,7 @@ class MovieRecyclerAdapter(
         fun bind(movie: Movie, onClick:(movie: Movie) -> Unit = {}) {
             Glide
                 .with(itemView)
-                .load(movie.posterURI)
+                .load(movie.posterUri)
                 .into(poster)
 
             movieName.text = movie.name

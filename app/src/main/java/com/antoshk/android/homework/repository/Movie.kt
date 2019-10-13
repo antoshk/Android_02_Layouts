@@ -4,7 +4,7 @@ import java.io.Serializable
 
 data class Movie(
     val name: String,
-    val posterURI: String,
+    val posterUri: String,
     val description: String
 ) : Serializable
 
