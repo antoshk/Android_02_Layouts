@@ -56,8 +56,7 @@ class MovieRecyclerAdapter(
             description.text = movie.description
 
             itemView.setOnClickListener {
-                onClick.invoke(movie)
-                //Toast.makeText(itemView.context, movie.name + " selected", Toast.LENGTH_SHORT).show()
+                onClick(movie)
             }
         }
 
