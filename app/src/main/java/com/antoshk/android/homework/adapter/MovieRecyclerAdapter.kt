@@ -1,4 +1,4 @@
-package com.antoshk.android.homework
+package com.antoshk.android.homework.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.antoshk.android.homework
+package com.antoshk.android.homework.fragment
 
 import android.content.Intent
 import android.net.Uri
