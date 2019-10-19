@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homework.DetailsActivity">
+    tools:context=".homework.fragment.DetailsSliderFragment">
 
     <ImageView
         android:id="@+id/top_image"
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:text="April 22, 2019"
+        tools:text="April 22, 2019"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/released"

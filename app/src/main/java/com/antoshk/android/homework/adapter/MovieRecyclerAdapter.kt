@@ -1,4 +1,4 @@
-package com.antoshk.android.homework
+package com.antoshk.android.homework.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -56,8 +56,7 @@ class MovieRecyclerAdapter(
             description.text = movie.description
 
             itemView.setOnClickListener {
-                onClick.invoke(movie)
-                //Toast.makeText(itemView.context, movie.name + " selected", Toast.LENGTH_SHORT).show()
+                onClick(movie)
             }
         }
 

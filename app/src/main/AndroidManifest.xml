@@ -18,10 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.antoshk.android.homework.DetailsActivity">
-
-        </activity>
-        <activity android:name="com.antoshk.android.homework.MoviesActivity">
+        <activity android:name=".homework.FragmentLoaderActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
