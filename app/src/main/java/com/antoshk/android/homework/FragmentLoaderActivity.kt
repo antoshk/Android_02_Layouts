@@ -13,12 +13,7 @@ class FragmentLoaderActivity: AppCompatActivity(), FragmentLoader{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.frame_container)
 
-        supportFragmentManager
-            .beginTransaction()
-            .addToBackStack(null)
-            .replace(R.id.container, MoviesFragment())
-            .commit()
-
+        loadFragment(MoviesFragment())
     }
 
     override fun getSupportManager(): FragmentManager {
