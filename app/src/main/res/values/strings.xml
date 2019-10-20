@@ -5,4 +5,6 @@
     <string name="released">Released:</string>
     <string name="movie_trailer">MOVIE TRAILER</string>
     <string name="overview">Overview:</string>
+    <string name="open_coroutines_activity">Open Coroutines Activity</string>
+    <string name="open_thread_handler_activity">Open Thread Handler Activity</string>
 </resources>

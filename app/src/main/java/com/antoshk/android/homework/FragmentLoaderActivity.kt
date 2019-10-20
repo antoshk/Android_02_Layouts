@@ -7,23 +7,28 @@ import androidx.fragment.app.FragmentManager
 import com.antoshk.android.R
 import com.antoshk.android.homework.fragment.MoviesFragment
 
-class FragmentLoaderActivity: AppCompatActivity(), FragmentLoader{
+class FragmentLoaderActivity : AppCompatActivity(), FragmentLoader {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.frame_container)
-
-        loadFragment(MoviesFragment())
+        if (savedInstanceState == null) {
+            loadFragment(MoviesFragment(), false)
+        }
     }
 
     override fun getSupportManager(): FragmentManager {
         return supportFragmentManager
     }
 
-    override fun loadFragment(fragment: Fragment) {
-        supportFragmentManager
+    override fun loadFragment(fragment: Fragment, addToBackStack: Boolean) {
+        val transaction = supportFragmentManager
             .beginTransaction()
-            .addToBackStack(null)
+        if (addToBackStack) {
+            transaction.addToBackStack(null)
+        }
+        transaction
             .replace(R.id.container, fragment)
             .commit()
     }
