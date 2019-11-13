@@ -1,9 +1,6 @@
 package com.antoshk.android.homework.thread
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.lang.ref.WeakReference
 import kotlin.coroutines.CoroutineContext
 
@@ -11,11 +8,10 @@ private const val defaultStartCount = 1
 
 class CounterCoroutineTask(
     private val viewRef: WeakReference<TaskEventListener?>,
-    override val coroutineContext: CoroutineContext,
     private val initialCount: Int = defaultStartCount
 ) : CounterTask, CoroutineScope {
 
-
+    override val coroutineContext: CoroutineContext = SupervisorJob() + Dispatchers.Main
     private lateinit var job: Job
 
     override fun start() {
@@ -25,7 +21,7 @@ class CounterCoroutineTask(
     }
 
     suspend fun doJob() {
-        if(initialCount == defaultStartCount) {
+        if (initialCount == defaultStartCount) {
             viewRef.get()?.onPreExecute()
             delay(500L)
         }
