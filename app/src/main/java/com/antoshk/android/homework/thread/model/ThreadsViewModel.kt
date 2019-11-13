@@ -10,31 +10,31 @@ import com.antoshk.android.homework.thread.factory.TaskFactory
 import java.lang.ref.WeakReference
 
 class ThreadsViewModel(private val taskFactory: TaskFactory) : ViewModel() {
-    private val output: MutableLiveData<String> = MutableLiveData("Threads fragment")
+    private val _output: MutableLiveData<String> = MutableLiveData("Threads fragment")
     private var counterTask: CounterTask? = null
     private var state = CounterTaskStates.NOT_CREATED
 
-    val exposedLiveDataText: LiveData<String> = output
+    val output: LiveData<String> = _output
 
     private val listener: TaskEventListener = object : TaskEventListener {
         override fun onPreExecute() {
-            output.value = "Task started"
+            _output.value = "Task started"
             state = CounterTaskStates.STARTED
         }
 
         override fun onPostExecute() {
-            output.value = "Done"
+            _output.value = "Done"
             state = CounterTaskStates.FINISHED
         }
 
         override fun onProgressUpdate(progress: Int) {
-            output.value = progress.toString()
+            _output.value = progress.toString()
         }
     }
 
     fun onCreateTask() {
         counterTask = taskFactory.createTask(WeakReference(listener))
-        output.value = "Task created"
+        _output.value = "Task created"
         state = CounterTaskStates.CREATED
     }
 
@@ -42,7 +42,7 @@ class ThreadsViewModel(private val taskFactory: TaskFactory) : ViewModel() {
         if (counterTask != null) {
             counterTask!!.start()
         } else {
-            output.value = "Create task before starting!"
+            _output.value = "Create task before starting!"
         }
     }
 
@@ -50,12 +50,12 @@ class ThreadsViewModel(private val taskFactory: TaskFactory) : ViewModel() {
         when (state) {
             CounterTaskStates.STARTED -> {
                 counterTask?.cancel()
-                output.value = "Task canceled"
+                _output.value = "Task canceled"
                 state = CounterTaskStates.FINISHED
             }
-            CounterTaskStates.FINISHED -> output.value = "Task already finished. Create new one"
-            CounterTaskStates.CREATED -> output.value = "Must start task first"
-            CounterTaskStates.NOT_CREATED -> output.value = "Must create task first"
+            CounterTaskStates.FINISHED -> _output.value = "Task already finished. Create new one"
+            CounterTaskStates.CREATED -> _output.value = "Must start task first"
+            CounterTaskStates.NOT_CREATED -> _output.value = "Must create task first"
         }
     }
 

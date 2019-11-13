@@ -62,7 +62,7 @@ class TreadsFragment : Fragment(), Observer<String> {
         taskFactory = arguments?.getSerializable(TASK_FACTORY) as TaskFactory?
         if (taskFactory != null) {
             viewModel = ViewModelProviders.of(this, ThreadsViewModelFactory(taskFactory!!)).get(ThreadsViewModel::class.java)
-            viewModel.exposedLiveDataText.observe(this, this)
+            viewModel.output.observe(viewLifecycleOwner, this)
 
             view.findViewById<Button>(R.id.create_thread_button).setOnClickListener {
                 viewModel.onCreateTask()
